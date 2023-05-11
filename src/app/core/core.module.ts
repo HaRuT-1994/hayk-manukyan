@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { LandingComponent } from './components/landing/landing.component';
+import { LandingComponent } from '../modules/home/components/landing/landing.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +12,8 @@ import { LandingComponent } from './components/landing/landing.component';
     LandingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [HeaderComponent, LandingComponent]
 })
