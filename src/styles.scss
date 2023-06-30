@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'src/assets/styles/links.scss';
+@import 'src/assets/styles/variables.scss';
+
+/* // app-button
+// .btn {
+//   flex: 1 1 auto;
+//   align-items: center;
+//   width: 90px;
+//   height: 40px;
+//   margin: 10px;
+//   padding: 10px;
+//   text-align: center;
+//   transition: 0.5s;
+//   background-size: 200% auto;
+//   color: white;
+//   box-shadow: 0 0 10px #eee;
+//   border-radius: 10px;
+//   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+
+//   &:hover {
+//     background-position: right center;
+//   }
+//  }
+
+*/
+

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, TransferState } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
+import { CoreModule } from '@core/core.module';
 import { ContactComponent } from './modules/contact/contact.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { translateBrowserLoaderFactory } from '@shared/helpers/translate-browser.loader';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
       defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
-        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, './assets/i18n/', '.json'),
-        deps: [HttpClient]
+        useFactory: translateBrowserLoaderFactory,
+        deps: [HttpClient, TransferState]
       }
     })
   ],

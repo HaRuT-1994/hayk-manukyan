@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm run dev:ssr` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -32,3 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 minimum node version 14.20.0
 nvm i 14.20.0
 nvm use 14.20.0
+
+
+## Tailwind css start
+npx tailwindcss -i ./src/styles.scss -o ./dist/output.css --watch

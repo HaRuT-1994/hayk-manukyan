@@ -1,22 +1,23 @@
-<header class="main-header">
-    <nav class="menu">
-      <ul class="menu-list">
-        <li><a routerLink="/">{{'HEADER.HOME' | translate}}</a></li>
-        <li><a href="#">{{'HEADER.ABOUT' | translate}}</a></li>
-        <li><a routerLink="note">{{'HEADER.NOTE' | translate}}</a></li>
-        <li><a routerLink="contact">{{'HEADER.CONTACT' | translate}}</a></li>
-      </ul>
-    </nav>
-    <div class="social-buttons">
-      <a href="#" class="social-button facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="#" class="social-button twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#" class="social-button instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
+<header class="flex justify-between items-center p-2 h-14 bg-neutral-400">  
+  <img src="assets/img/logo.jpg" alt="logo" width="80px" height="80px">
+  <nav class="h-7">
+    <div class="container">
+      <a class="link" routerLink="/">{{'HEADER.HOME' | translate}}</a>
+      <a class="link" routerLink="about">{{'HEADER.ABOUT' | translate}}</a>
+      <a class="link" routerLink="note">{{'HEADER.NOTE' | translate}}</a>
+      <a class="link" routerLink="contact">{{'HEADER.CONTACT' | translate}}</a>
     </div>
-  </header>
+  </nav>
+  <div class="flex">
+    <a href="#">
+      <img src="assets/img/icons/icons8-facebook-48.webp" alt="facebook icon">
+    </a>
+    <a href="#">
+      <img src="assets/img/icons/icons8-instagram-48.webp" alt="instagram icon">
+    </a>
+    <a href="#">
+      <img src="assets/img/icons/icons8-youtube-48.webp" alt="youtube icon">
+    </a>
+  </div>
+</header>
   
