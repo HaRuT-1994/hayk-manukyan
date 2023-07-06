@@ -4,7 +4,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingComponent {
 

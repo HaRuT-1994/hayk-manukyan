@@ -4,7 +4,6 @@ import { BrowserModule, TransferState } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
-import { ContactComponent } from './modules/contact/contact.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { translateBrowserLoaderFactory } from '@shared/helpers/translate-browser.loader';
@@ -16,7 +15,6 @@ import { translateBrowserLoaderFactory } from '@shared/helpers/translate-browser
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    ContactComponent,
     CoreModule,
     HttpClientModule,
     TranslateModule.forRoot({

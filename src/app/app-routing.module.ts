@@ -1,21 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './modules/contact/contact.component';
-import { LandingComponent } from './modules/home/components/landing/landing.component';
-import { NotesComponent } from './modules/notes/notes.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LandingComponent
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./modules/home/components/landing/landing.component').then((x) => x.LandingComponent),
   },
   {
     path: 'contact',
-    component: ContactComponent
+    loadComponent: () => import('./modules/contact/contact.component').then((x) => x.ContactComponent),
+
   }, 
   {
     path: 'note',
-    component: NotesComponent
+    loadComponent: () => import('./modules/notes/notes.component').then((x) => x.NotesComponent),
+  },
+  {
+    path: 'about',
+    loadComponent: () => import('./modules/about/about.component').then((x) => x.AboutComponent),
+  },
+  {
+    path: 'admin',
+    loadComponent: () => import('./modules/amdin/amdin.component').then((x) => x.AmdinComponent),
   }, 
 ];
 
