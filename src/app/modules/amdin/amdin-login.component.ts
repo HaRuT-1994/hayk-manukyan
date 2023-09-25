@@ -5,16 +5,16 @@ import { ValidationErrorsDirective } from '@shared/directives/input-errors.direc
 
 @Component({
   selector: 'app-amdin',
-  templateUrl: './amdin.component.html',
+  templateUrl: './amdin-login.component.html',
   styleUrls: ['../../../assets/styles/forms.scss'],
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, ValidationErrorsDirective],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AmdinComponent {
+export class AmdinLoginComponent {
   adminLoginForm = this.fb.group({
-    email: [null, Validators.required, Validators.email],
-    password: [null, Validators.required, Validators.minLength(6)]
+    email: [null, [Validators.required, Validators.email]],
+    password: [null, [Validators.required, Validators.minLength(6)]]
   });
 
   constructor(private fb: FormBuilder) {}

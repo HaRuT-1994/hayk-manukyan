@@ -26,7 +26,11 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadComponent: () => import('./modules/amdin/amdin.component').then((x) => x.AmdinComponent),
+    loadComponent: () => import('./modules/amdin/amdin-login.component').then((x) => x.AmdinLoginComponent),
+  },
+  {
+    path: 'admin/home',
+    loadComponent: () => import('./modules/amdin/components/admin-home/admin-home.component').then((x) => x.AdminHomeComponent),
   }, 
 ];
 

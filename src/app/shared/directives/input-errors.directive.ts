@@ -43,13 +43,14 @@ export class ValidationErrorsDirective {
     switch (errorName) {
       case 'required':
         return 'This field is required';
+      case 'email':
+        return 'Invalid email address';
       case 'minlength':
         return `Minimum length is ${errorValue.requiredLength}`;
       case 'maxlength':
         return `Maximum length is ${errorValue.requiredLength}`;
       case 'pattern':
         return 'Invalid input';
-      // Add additional cases for custom error messages if needed
       default:
         return 'Validation error';
     }

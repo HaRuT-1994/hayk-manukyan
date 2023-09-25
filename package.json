@@ -1,10 +1,10 @@
 {
   "name": "hayk-manukyan",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
+    "start": "TAILWIND_MODE=watch craco start",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run hayk-manukyan:serve-ssr",
