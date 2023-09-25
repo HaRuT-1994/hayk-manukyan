@@ -9,15 +9,22 @@
     </div>
   </nav>
   <div class="flex">
-    <a href="#">
-      <img src="assets/img/icons/icons8-facebook-48.webp" alt="facebook icon">
-    </a>
-    <a href="#">
-      <img src="assets/img/icons/icons8-instagram-48.webp" alt="instagram icon">
-    </a>
-    <a href="#">
-      <img src="assets/img/icons/icons8-youtube-48.webp" alt="youtube icon">
-    </a>
+    <div  class="flex">
+      <a href="#">
+        <img src="assets/img/icons/icons8-facebook-48.webp" alt="facebook icon">
+      </a>
+      <a href="#">
+        <img src="assets/img/icons/icons8-instagram-48.webp" alt="instagram icon">
+      </a>
+      <a href="#">
+        <img src="assets/img/icons/icons8-youtube-48.webp" alt="youtube icon">
+      </a>
+    </div>
+    <select (change)="onSelect($event.target)">
+      <option value="en">En</option>
+      <option value="hy">Hy</option>
+    </select>
+    
   </div>
 </header>
   
