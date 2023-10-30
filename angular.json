@@ -5,11 +5,7 @@
   "projects": {
     "hayk-manukyan": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": { "@schematics/angular:component": { "style": "scss" } },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,46 +13,79 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/server",
+            "preserveSymlinks": true,
+            "outputPath": "dist/hayk-manukyan/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/styles.scss"
-            ],
-            "scripts": []
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "8mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "40kb",
+                  "maximumError": "200kb"
                 }
               ],
-              "outputHashing": "all"
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                  },
+                "fonts": true
+              },
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             },
             "development": {
-              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "8mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "40kb",
+                  "maximumError": "200kb"
+                }
+              ],
               "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
+              "outputHashing": "all",
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -65,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hayk-manukyan:build:production"
+              "browserTarget": "ataix_kz_new:build:production"
             },
             "development": {
-              "browserTarget": "hayk-manukyan:build:development"
+              "browserTarget": "ataix_kz_new:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +105,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hayk-manukyan:build"
+            "browserTarget": "ataix_kz_new:build"
           }
         },
         "test": {
@@ -87,7 +116,6 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -103,14 +131,20 @@
           "options": {
             "outputPath": "dist/hayk-manukyan/server",
             "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
+            "tsConfig": "tsconfig.server.json"
           },
           "configurations": {
             "production": {
               "outputHashing": "media"
             },
             "development": {
+              "buildOptimizer": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ],
               "optimization": false,
               "sourceMap": true,
               "extractLicenses": false,
@@ -123,39 +157,46 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "hayk-manukyan:build:development",
-              "serverTarget": "hayk-manukyan:server:development"
+              "browserTarget": "ataix_kz_new:build:development",
+              "serverTarget": "ataix_kz_new:server:development"
             },
             "production": {
-              "browserTarget": "hayk-manukyan:build:production",
-              "serverTarget": "hayk-manukyan:server:production"
+              "browserTarget": "ataix_kz_new:build:production",
+              "serverTarget": "ataix_kz_new:server:production"
             }
           },
           "defaultConfiguration": "development"
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
           "configurations": {
             "production": {
-              "browserTarget": "hayk-manukyan:build:production",
-              "serverTarget": "hayk-manukyan:server:production"
+              "browserTarget": "ataix_kz_new:build:production",
+              "serverTarget": "ataix_kz_new:server:production"
             },
             "development": {
-              "browserTarget": "hayk-manukyan:build:development",
-              "serverTarget": "hayk-manukyan:server:development"
+              "browserTarget": "ataix_kz_new:build:development",
+              "serverTarget": "ataix_kz_new:server:development"
             }
           },
           "defaultConfiguration": "production"
         },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false,
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
