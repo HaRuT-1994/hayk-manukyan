@@ -15,7 +15,7 @@
           "options": {
             "baseHref": "/",
             "preserveSymlinks": true,
-            "outputPath": "docs",
+            "outputPath": "dist/hayk-manukyan/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
