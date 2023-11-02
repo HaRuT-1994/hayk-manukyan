@@ -19,11 +19,7 @@ export class ContactComponent {
   });
 
   constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-
-  }
-
+  
   submitForm(): void {
     if (this.contactForm.invalid) {
       return;

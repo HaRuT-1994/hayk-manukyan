@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () => import('./modules/home/components/landing/landing.component').then((x) => x.LandingComponent),
+    loadComponent: () => import('./modules/landing/landing.component').then((x) => x.LandingComponent),
   },
   {
     path: 'contact',
